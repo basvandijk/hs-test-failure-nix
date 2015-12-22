@@ -1,0 +1,23 @@
+name:          myLib
+version:       0.0.0
+license:       BSD3
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+build-type:    Simple
+cabal-version: >=1.10
+data-files:    data/*.png
+
+library
+  build-depends:    base >=4.8 && <5
+  hs-source-dirs:   src
+  exposed-modules:  Lib
+  other-modules:    Paths_myLib
+  default-language: Haskell2010
+
+test-suite test-myLib
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test
+  main-is:          test.hs
+  default-language: Haskell2010
+  build-depends:    myLib
+                  , base >= 4.8 && < 5
+                  , directory
